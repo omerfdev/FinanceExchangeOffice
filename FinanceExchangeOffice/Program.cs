@@ -29,7 +29,6 @@ namespace FinanceExchangeOffice
                 Console.WriteLine("US_Dollar:{0} Turkish Lira", US_Dollar);
                 Console.WriteLine("Euro:{0} Turkish Lira", Euro);
                 Console.WriteLine("Pound:{0} Turkish Lira", Pound);
-            LOWPAGE:
                 Console.WriteLine("1-Return Main Page");
                 Console.WriteLine("2-Exit");
                 Console.WriteLine("Select 1 or 2");
@@ -360,11 +359,47 @@ namespace FinanceExchangeOffice
             }
             else if (Mainpage=='5')
             {
+                Console.WriteLine("US Dollar Sold Price {0} Turkish Lira. ", (100000 - Dollarlimit) * US_Dollar);
+                Console.WriteLine("US Dollar Sold List {0}", 100000 - Dollarlimit);
+                Console.WriteLine("Euro Sold Price {0} Turkish Lira. ", (100000 - Eurolimit) * Euro);
+                Console.WriteLine("Euro Sold List {0}", 100000 - Eurolimit);
+                Console.WriteLine("Pound Sold Price {0} Turkish Lira. ", (100000 - Poundlimit) * Pound);
+                Console.WriteLine("Pound Sold List {0}", 100000 - Poundlimit);
+                Console.WriteLine("1-Return Main Page");
+                Console.WriteLine("2-Exit");
+                Console.WriteLine("Select 1 , 2 ");
+                Lowpage = Convert.ToChar(Console.ReadLine());
+                if (Lowpage == '1')
+                {
+                    Console.Clear();
+                    goto OMERFDEV;
+                }
+                else if (Lowpage == '2')
+                {
+                    Console.Clear();
+                    Environment.Exit(0);
+
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Wrong Command.");
+                    goto OMERFDEV;
+
+                }
 
             }
-
+            else if (Mainpage=='6')
+            {
+                Console.Clear();
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Wrong Command.");
+                goto OMERFDEV;
+            }
         }   
-        
-               
-    }
+       }
 }
