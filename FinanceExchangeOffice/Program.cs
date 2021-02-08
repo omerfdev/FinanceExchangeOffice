@@ -21,7 +21,7 @@ namespace FinanceExchangeOffice
             Console.WriteLine("6-Exit");
             Console.WriteLine("Select 1 2 3 4 5 6");
             Mainpage = Convert.ToChar(Console.ReadLine());
-            if (Mainpage == '1')
+            if (Mainpage=='1')
             {
                 Console.Clear();
                 Console.WriteLine("Show Unit Price List");
@@ -47,11 +47,11 @@ namespace FinanceExchangeOffice
                 {
                     Console.Clear();
                     Console.WriteLine("Wrong Command.");
-                    goto LOWPAGE;
+                    goto OMERFDEV;
                     
                 }
             }
-            else if (Mainpage == '2')
+            else if (Mainpage=='2')
             {
                 Console.Clear();
                 UPDATEMONEY:
@@ -168,10 +168,200 @@ namespace FinanceExchangeOffice
                     goto OMERFDEV;
                 }
 
+            }
+            else if (Mainpage=='3')
+            {
+                SELL:
+                Console.Clear();
+                Console.WriteLine("Sold Unit Money");
+                Console.WriteLine("Choose To  Be Sold Money Type");
+                Console.WriteLine("1-US Dollar");
+                Console.WriteLine("2-Euro");
+                Console.WriteLine("3-Pound");
+                Saletype = Convert.ToChar(Console.ReadLine());
+                if (Saletype=='1')
+                {
+                    if (Dollarlimit==0)
+                    {
+                        Console.WriteLine("No US Dollar To Sell");
+                        goto OMERFDEV;
+                    }
+                    else
+                    {
+                        Console.WriteLine("How Much US Dollar Will You Sell");
+                        Sale = Convert.ToDouble(Console.ReadLine());
+                        if (Dollarlimit<Sale)
+                        {
+                            Console.WriteLine("There Are {0} US Dollar.",Dollarlimit);
+                            goto SELL;
+                        }
+                        else if (Dollarlimit>=Sale)
+                        {
+                            Dollarlimit = Dollarlimit - Sale;
+                            Console.WriteLine("Trade Succesfull.");
+                            Console.WriteLine("There Are {0} US Dollar.",Dollarlimit);
+                            Console.WriteLine("1-Another Sell US Dollar");
+                            Console.WriteLine("2-Return Main Page");
+                            Console.WriteLine("3-Exit");
+                            Console.WriteLine("Select 1 , 2 , 3");
+                            Lowpage = Convert.ToChar(Console.ReadLine());
+                            if (Lowpage == '1')
+                            {
+                                Console.Clear();
+                                goto SELL;
+                            }
+                            else if (Lowpage == '2')
+                            {
+                                Console.Clear();
+                                goto OMERFDEV;
+
+                            }
+                            else if (Lowpage == '3')
+                            {
+                                Console.Clear();
+                                Environment.Exit(0);
+
+                            }
+
+                        }
+                    }
+                }
+                else if (Saletype=='2')
+                {
+                    if (Eurolimit==0)
+                    {
+                        Console.WriteLine("No Euro To Sell");
+                        goto OMERFDEV;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("How Much US Euro Will You Sell");
+                        Sale = Convert.ToDouble(Console.ReadLine());
+                        if (Eurolimit<Sale)
+                        {
+                            Console.WriteLine("There Are {0} Euro.", Eurolimit);
+                            goto SELL;
+                        }
+                        else if (Eurolimit>=Sale)
+                        {
+                            Eurolimit = Eurolimit - Sale;
+                            Console.WriteLine("Trade Succesfull.");
+                            Console.WriteLine("There Are {0} Euro.", Eurolimit);
+                            Console.WriteLine("1-Another Sell Euro");
+                            Console.WriteLine("2-Return Main Page");
+                            Console.WriteLine("3-Exit");
+                            Console.WriteLine("Select 1 , 2 , 3");
+                            Lowpage = Convert.ToChar(Console.ReadLine());
+                            if (Lowpage == '1')
+                            {
+                                Console.Clear();
+                                goto SELL;
+                            }
+                            else if (Lowpage == '2')
+                            {
+                                Console.Clear();
+                                goto OMERFDEV;
+
+                            }
+                            else if (Lowpage == '3')
+                            {
+                                Console.Clear();
+                                Environment.Exit(0);
+
+                            }
+                        }
+                    }
+
+                }
+                else if (Saletype=='3')
+                {
+                    if (Poundlimit==0)
+                    {
+                        Console.WriteLine("No Pound To Sell");
+                        goto OMERFDEV;
+                    }
+                    else
+                    {
+                        Console.WriteLine("How Much Pound Will You Sell");
+                        Sale = Convert.ToDouble(Console.ReadLine());
+                    }
+                    if (Poundlimit<Sale)
+                    {
+                        Console.WriteLine("There Are {0} Pound.", Poundlimit);
+                        goto SELL;
+                    }
+                    else if (Poundlimit>=Sale)
+                    {
+                        Poundlimit = Poundlimit - Sale;
+                        Console.WriteLine("Trade Succesfull.");
+                        Console.WriteLine("There Are {0} Pound.", Poundlimit);
+                        Console.WriteLine("1-Another Sell Pound");
+                        Console.WriteLine("2-Return Main Page");
+                        Console.WriteLine("3-Exit");
+                        Console.WriteLine("Select 1 , 2 , 3");
+                        Lowpage = Convert.ToChar(Console.ReadLine());
+                        if (Lowpage == '1')
+                        {
+                            Console.Clear();
+                            goto SELL;
+                        }
+                        else if (Lowpage == '2')
+                        {
+                            Console.Clear();
+                            goto OMERFDEV;
+
+                        }
+                        else if (Lowpage == '3')
+                        {
+                            Console.Clear();
+                            Environment.Exit(0);
+
+                        }
+
+                    }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Wrong Command.");
+                    goto OMERFDEV;
+
+                }
 
             }
+            else if (Mainpage=='4')
+            {
+                Console.WriteLine("There Are {0} US Dollar.", Dollarlimit);
+                Console.WriteLine("There Are {0} Euro.", Eurolimit);
+                Console.WriteLine("There Are {0} Pound.", Poundlimit);
+                Console.WriteLine("1-Return Main Page");
+                Console.WriteLine("2-Exit");
+                Console.WriteLine("Select 1 , 2 ");
+                Lowpage = Convert.ToChar(Console.ReadLine());
+                if (Lowpage == '1')
+                {
+                    Console.Clear();
+                    goto OMERFDEV;
+                }
+                else if (Lowpage == '2')
+                {
+                    Console.Clear();
+                    Environment.Exit(0);
 
+                }
+                else  
+                {
+                    Console.Clear();
+                    Console.WriteLine("Wrong Command.");
+                    goto OMERFDEV;
 
+                }
+            }
+            else if (Mainpage=='5')
+            {
+
+            }
 
         }   
         
