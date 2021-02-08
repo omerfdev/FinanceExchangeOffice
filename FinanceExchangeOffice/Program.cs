@@ -47,8 +47,8 @@ namespace FinanceExchangeOffice
                 {
                     Console.Clear();
                     Console.WriteLine("Wrong Command.");
-                    Console.WriteLine("Press Any Tutton To Quit....");
-                    Console.ReadKey();
+                    goto LOWPAGE;
+                    
                 }
             }
             else if (Mainpage == '2')
@@ -68,7 +68,28 @@ namespace FinanceExchangeOffice
                     Console.Clear();
                     Console.WriteLine("Update Completed.");
                     Console.WriteLine("US Dollar : {0} Turkish lira", US_Dollar);
-                    goto OMERFDEV;
+                    Console.WriteLine("1-Another Update Unit List");
+                    Console.WriteLine("2-Return Main Page");
+                    Console.WriteLine("3-Exit");
+                    Console.WriteLine("Select 1 , 2 , 3");
+                    Lowpage = Convert.ToChar(Console.ReadLine());
+                    if (Lowpage == '1')
+                    {
+                        Console.Clear();
+                        goto UPDATEMONEY;
+                    }
+                    else if (Lowpage == '2')
+                    {
+                        Console.Clear();
+                        goto OMERFDEV;
+
+                    }
+                    else if(Lowpage =='3')
+                    {
+                        Console.Clear();
+                        Environment.Exit(0);
+
+                    }
                     Console.ReadKey();
 
                 }
@@ -82,8 +103,28 @@ namespace FinanceExchangeOffice
                     Console.Clear();
                     Console.WriteLine("Update Completed.");
                     Console.WriteLine("Euro : {0} Turkish lira", Euro);
-                    goto OMERFDEV;
-                    Console.ReadKey();
+                    Console.WriteLine("1-Another Update Unit List");
+                    Console.WriteLine("2-Return Main Page");
+                    Console.WriteLine("3-Exit");
+                    Console.WriteLine("Select 1 , 2 , 3");
+                    Lowpage = Convert.ToChar(Console.ReadLine());
+                    if (Lowpage == '1')
+                    {
+                        Console.Clear();
+                        goto UPDATEMONEY;
+                    }
+                    else if (Lowpage == '2')
+                    {
+                        Console.Clear();
+                        goto OMERFDEV;
+
+                    }
+                    else if (Lowpage == '3')
+                    {
+                        Console.Clear();
+                        Environment.Exit(0);
+
+                    }
 
 
                 }
@@ -96,8 +137,28 @@ namespace FinanceExchangeOffice
                     Console.Clear();
                     Console.WriteLine("Update Completed.");
                     Console.WriteLine("Pound : {0} Turkish lira", Pound);
-                    goto OMERFDEV;
-                    Console.ReadKey();
+                    Console.WriteLine("1-Another Update Unit List");
+                    Console.WriteLine("2-Return Main Page");
+                    Console.WriteLine("3-Exit");
+                    Console.WriteLine("Select 1 , 2 , 3");
+                    Lowpage = Convert.ToChar(Console.ReadLine());
+                    if (Lowpage == '1')
+                    {
+                        Console.Clear();
+                        goto UPDATEMONEY;
+                    }
+                    else if (Lowpage == '2')
+                    {
+                        Console.Clear();
+                        goto OMERFDEV;
+
+                    }
+                    else if (Lowpage == '3')
+                    {
+                        Console.Clear();
+                        Environment.Exit(0);
+
+                    }
 
                 }
                 else
@@ -106,6 +167,7 @@ namespace FinanceExchangeOffice
                     Console.WriteLine("Wrong Command.");
                     goto OMERFDEV;
                 }
+
 
             }
 
