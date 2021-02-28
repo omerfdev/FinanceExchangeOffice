@@ -6,6 +6,7 @@ namespace FinanceExchangeOffice
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("{0:r}", DateTime.Now);
             Double US_Dollar = 7.97, Euro = 8.22, Pound = 11.02;
             Double Dollarlimit = 100000, Eurolimit = 100000, Poundlimit = 100000;
             double Sale = 0;
